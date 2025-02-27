@@ -6,4 +6,7 @@ scikit-learn
 dill
 Flask
 python-dotenv
+pymongo[srv]==3.11
+pymongo
+certifi
 # -e .
