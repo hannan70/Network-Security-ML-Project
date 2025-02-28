@@ -23,7 +23,7 @@ class NetworkDataExtract:
     except CustomException as e:
         raise CustomException(e, sys)
 
-
+    # convert raw data into json
     def cv_to_json_converter(self, file_path):
         try:
             data = pd.read_csv(file_path)
@@ -34,6 +34,7 @@ class NetworkDataExtract:
         except CustomException as e:
             raise CustomException(e, sys)
 
+    # Insert json data inside mongodb
     def insert_data_mongodb(self, records, database, collection):
         try:
             self.database = database
