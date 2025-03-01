@@ -15,8 +15,8 @@ class DataTransformation:
     def __init__(self, data_validation_artifact: DataValidationArtifact,
                  data_transformation_config: DataTransformationConfig):
         try:
-            self.data_validation_artifact:DataValidationArtifact=data_validation_artifact
-            self.data_transformation_config:DataTransformationConfig=data_transformation_config
+            self.data_validation_artifact=data_validation_artifact
+            self.data_transformation_config=data_transformation_config
         except CustomException as e:
             raise CustomException(e, sys)
         
@@ -78,9 +78,8 @@ class DataTransformation:
             save_numpy_array_data(self.data_transformation_config.transformed_train_file_path, array=train_arr)
             save_numpy_array_data(self.data_transformation_config.transformed_test_file_path, array=test_arr)
             save_object( self.data_transformation_config.transformed_object_file_path, preprocessor)
-
-            # save_object(self.data_transformation_config.transformed_object_file_path,  preprocessor)
-
+            
+            save_object( "final_model/preprocessor.pkl", preprocessor)
 
             #preparing artifacts
             data_transformation_artifact=DataTransformationArtifact(
