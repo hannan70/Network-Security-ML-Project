@@ -131,6 +131,8 @@ celerybeat.pid
 Artifacts
 logs
 data
+prediction_output
+valid_data
 .env
 .venv
 env/

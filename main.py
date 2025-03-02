@@ -6,6 +6,7 @@ from src.components.model_trainer import ModelTrainer
 from src.logging.logger import logging
 
 if __name__=="__main__":
+    
     trainingpipelineconfig = TrainingPipelineConfig()
     dataingestionconfig = DataIngestionConfig(trainingpipelineconfig)
     obj = DataIngestion(dataingestionconfig)
